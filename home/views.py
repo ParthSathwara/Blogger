@@ -6,7 +6,9 @@ from django.contrib.auth.models import User
 from blogapp.models import Post
 # Create your views here.
 def home(request):
-    return render(request, 'home/home.html')
+    popularPosts = Post.objects.all()[:1].get()
+    context = {'popularPosts': popularPosts}
+    return render(request, 'home/home.html', context)
 
 def about(request):
     return render(request, 'home/about.html')
