@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from blogapp.models import Post, BlogComment
 from django.contrib import messages
 from blogapp.templatetags import extras
+
 # Create your views here.
 def blogHome(request):
     allPosts = Post.objects.all()
